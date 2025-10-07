@@ -6,14 +6,14 @@
    hauteur du «grand-père», et ainsi de suite.
    Pour pouvoir utiliser un "min-height: 100%" sur div#global, il nous faut:
    - un parent (body) en "height: 100%";
-   - le parent de body également en "height: 100%". */
+   - le parent de body également en "height: 100%". ahhhhhh*/
 html, body {
     height: 100%;
 }
 
 body {
-    color: #bfbfbf;
-    background: black;
+    color: #ffffff;
+    background: rgb(2, 0, 114);
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
@@ -27,7 +27,7 @@ h1 {
 
 #global {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #333534;
+    background: rgb(168, 167, 255);
     width: 70%;
     margin: auto;	/* Permet de centrer la div */
     text-align: justify;
