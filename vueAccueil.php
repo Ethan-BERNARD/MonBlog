@@ -17,10 +17,10 @@
                         ?>
                         <article>
                             <header>
-                                <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-                                <time><?= $billet['date'] ?></time>
+                                <h1 class="titreBillet"><?= $billet['titreBillet'] ?></h1>
+                                <time><?= $billet['dateBillet'] ?></time>
                             </header>
-                            <p><?= $billet['contenu'] ?></p>
+                            <p><?= $billet['contenuBillet'] ?></p>
                             <em><a href="#">Commentaires</a></em>
                         </article>
                         <hr />
