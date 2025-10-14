@@ -13,11 +13,8 @@ function getBillets() {
 }
 
 function getBdD() {
-    try {
-        $bdd = new PDO('mysql:host=perso.local;dbname=monblog;charset=utf8', 'root', '');
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $bdd;
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $bdd = new PDO('mysql:host=perso.local;dbname=monblog;charset=utf8', 'root', '', 
+                                        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    return $bdd;
+
 }
