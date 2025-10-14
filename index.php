@@ -1,3 +1,5 @@
 <?php require 'Modele.php';
 $billets = getBillets();
-require 'vueAccueil.php';
+// Affichage
+$contenu = 'vueAccueil.php';
+require 'gabarit.php';
