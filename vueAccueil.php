@@ -5,7 +5,7 @@
             <time><?= $billet['dateBillet'] ?></time>
         </header>
         <p><?= $billet['contenuBillet'] ?></p>
-        <em><a href="billet.php?id=<?= $billet['idBillet'] ?>">Commentaires</a></em>
+        <em><a href="index.php?action=billet&id=<?= $billet['idBillet'] ?>">Commentaires</a></em>
     </article>
     <hr />
 <?php endforeach; ?>

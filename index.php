@@ -1,12 +1,19 @@
 <?php
-require 'Modele.php';
-try {
-    $billets = getBillets();
-    // Affichage
-    $contenu = 'vueAccueil.php';
-    require 'gabarit.php';
-} catch (Exception $e) {
-    $msgErreur = $e ->getMessage();
-    $contenu = 'vueErreur.php';
-    require 'gabarit.php';
-}
+    require 'Controleur.php';
+
+    try {
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] == 'billet') {
+                if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+                    $idBillet = intval($_GET['id']);
+                    unBillet($idBillet);
+                }
+            } else {
+                erreur("Action non valide");
+            }
+        } else {
+            accueil();
+        }
+    } catch (Exception $e) {
+        erreur($e->getMessage());
+    }
