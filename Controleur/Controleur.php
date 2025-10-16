@@ -1,21 +1,21 @@
 <?php
-require 'Modele.php';
+require 'Modele/Modele.php';
 
 // Affiche tous les articles du blog
 function accueil() {
     $billets = getBillets();
-    $contenu = 'vueAccueil.php';
-    require 'gabarit.php';
+    $contenu = 'Vue/vueAccueil.php';
+    require 'Vue/gabarit.php';
 }
 
 function unBillet($idBillet) {
     $billet = getUnBillet($idBillet);
     $commentaires = getCommentaires($idBillet);
-    $contenu = 'vueBillet.php';
-    require 'gabarit.php';
+    $contenu = 'Vue/vueBillet.php';
+    require 'Vue/gabarit.php';
 }
 
 function erreur($msgErreur) {
-    $contenu = 'vueErreur.php';
-    require 'gabarit.php';
+    $contenu = 'Vue/vueErreur.php';
+    require 'Vue/gabarit.php';
 }

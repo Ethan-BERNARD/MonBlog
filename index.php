@@ -1,19 +1,25 @@
 <?php
-    require 'Controleur.php';
+require 'Controleur/Controleur.php';
 
-    try {
-        if (isset($_GET['action'])) {
-            if ($_GET['action'] == 'billet') {
-                if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+try {
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] === 'billet') {
+            if (isset($_GET['id'])) {
+                if (is_numeric($_GET['id'])) {
                     $idBillet = intval($_GET['id']);
                     unBillet($idBillet);
+                } else {
+                    erreur("Identifiant de billet non valide");
                 }
             } else {
-                erreur("Action non valide");
+                erreur("Identifiant de billet non défini");
             }
         } else {
-            accueil();
+            erreur("Action non valide");
         }
-    } catch (Exception $e) {
-        erreur($e->getMessage());
+    } else {
+        accueil();
     }
+} catch (Exception $e) {
+    erreur("Une erreur est survenue : " . $e->getMessage());
+}

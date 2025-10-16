@@ -1,3 +1,12 @@
+-- Création d’un utilisateur avec accès limité
+CREATE USER 'bloguser'@'localhost' IDENTIFIED BY 'SecretPassword3';
+
+-- Attribution des droits uniquement sur la base monblog
+GRANT SELECT, INSERT, UPDATE ON monblog.* TO 'bloguser'@'localhost';
+
+-- Appliquer les changements
+FLUSH PRIVILEGES;
+
 
 drop table if exists COMMENTAIRE;
 drop table if exists BILLET;
